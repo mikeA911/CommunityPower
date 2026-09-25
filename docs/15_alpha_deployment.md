@@ -1,10 +1,12 @@
 # Alpha deployment runbook
 
-Version 0.1 · 25 September 2026 · Vercel/Supabase colleague preview
+Version 0.2 · 25 September 2026 · Vercel/Supabase colleague preview
 
 ## Intended release
 
 This release is an **alpha prototype** for invited colleagues. It demonstrates the public site, blue/yellow CP interface, synthetic role dashboards, community login and password recovery. Dashboard data, bill review, consumer import, board posts and CP answers remain synthetic or session-only. It is not a production energy service and must not receive real bills, account numbers, AI keys or confidential agreements.
+
+The reviewed application commit `96e0442` is deployed at `https://community-power-theta.vercel.app`. Public HTTP checks passed for the landing page, About, Help and all three synthetic dashboard routes on 25 September 2026. The CP preview endpoint returned a wiki-grounded response, and a synthetic invalid login returned HTTP 401. Supabase now uses the stable alpha origin as its Site URL and allows exact local and deployed callbacks. Fresh recovery requests for both community accounts returned HTTP 200; each recipient still needs to complete the emailed link to finish the end-to-end recovery check.
 
 The pilot-community Supabase project is connected. Its community-admin and consumer Auth identities have current database role assignments. The separate Sandz control project and platform-admin identity are not connected, so the Sandz dashboard remains a public synthetic preview.
 
