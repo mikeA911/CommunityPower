@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "created": "2026-09-24",
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "AGENTS.md": "a0e5fbbe75a6cdba38ecb0de6d684d70336275905844039247623c67bf0b6b7b",
+    "codex/AGENTS.md": "3f9a8f987f25580556fc16ce66dd5f7f7a548e095e31fe02adda872eff683405",
+    "codex/PROJECT_CONTEXT.md": "65e1cadd5641bf7c44628e2fd2c986975e5f2ed21b8c2d37ec73de6f07c87a7f",
+    "docs/00_provenance.md": "df3e6fd550a0b42f4d38c21a63b9ee3804a824b65b1b01c5926dd02f8ae1190b",
+    "docs/01_concept_paper.md": "31f154010b459c0bc412c3b5f1cbec7609d826ebf77c3b65cf8f03084daad002",
+    "docs/02_mvp_specification.md": "958c9e1ca16d99b68da02c51158d1213bae65444fcadd337a001291b164107bb",
+    "docs/03_business_model.md": "ab584dd91cc11c4d8486ee756f83727b44a0860e109bba765924f78de042d186",
+    "docs/04_go_no_go.md": "5198ff4f6875acc302b1b6a924373ced770753aef6531ff95b062d8f6e15cb44",
+    "docs/05_market_competition.md": "6ba627016256fa4f904a80fc3e5c55df70710d1654845471fe56c57d7ffc23b2",
+    "docs/06_community_benefits.md": "170b87991fdc0818704b764e1114d980a1bae343057d68cc0dde6e114f1b4c6c",
+    "docs/07_delivery_plan.md": "cd9e5202c1a1339dd5759514ef27da78e1a719ef45d50539a22a950baaa16e1d",
+    "docs/08_validation_register.md": "903654f1efd325b3645694d54724a24ebc420200a1309ec0f5b6bc2bebd981f7",
+    "docs/09_codex_handoff.md": "6b78a8cf3a145239aab2d98c62f83c6a6746e79e02f87dc7fb44955317d1c360",
+    "docs/10_long_term_vision.md": "882c1af6e5ec7bfb1e8d0b5d6292ec4640b0dea7643dff633b6f3d2ba15e257c",
+    "docs/11_package_verification.md": "9589ebe5b20796449ced006da14166484790774a4aaf8c4ba642fc07a2e238ae",
+    "model/assumptions.csv": "dcbdf5f43aeaea63049119e9d84627c9ea2e18c9237aed02053574770a19999b",
+    "model/calculate.py": "4c3583e687127a460236821e4724cc7676c055141be096d00b07f20a55557f0f",
+    "model/forecast.csv": "d17015909d8a7159f3d7872d41b1f6fbbd0fbbffa396783094700a2d335000df",
+    "model/mvp_budget.csv": "2fbd10dadefa239521d2ae566bef11393b4c40d023130ac38e41608c00ac4323",
+    "model/README.md": "00b0a5ee9d5a0b02749e413dd4040cf59aae5934632044eb412faddf43ad266e",
+    "model/scenario_summary.csv": "24d683d37e73645ac9f47a8cddc248ec4a0cca2e1325514fc7d23d74bcde8741",
+    "README.md": "8f0fd22c3520cd48c644716b163a2c0d0cba3fe91977108d1fb3cff4a6000155"
+  }
+}

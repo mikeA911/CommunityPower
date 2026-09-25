@@ -1,0 +1,27 @@
+parameter,unit,downside,base,upside,status,definition
+communities,count,1,2,3,Preserved range; case choices proposed,Pilot community count
+accounts_per_community,accounts,150,250,350,Proposed,Reachable accounts; not verified eligible accounts
+target_adoption,fraction,0.2,0.4,0.6,Proposed,Share ever joining by end of ramp
+ramp_months,months,8,6,4,Proposed,Linear joining ramp
+monthly_churn,fraction,0.04,0.02,0.01,Proposed,Monthly active member loss
+eligible_fraction,fraction,0.2,0.5,0.7,Needs validation,Fraction of active members legally/commercially eligible
+supplier_conversion,fraction,0.25,0.4,0.6,Needs validation,Eligible members activated with supplier
+upgrade_adoption,fraction,0.03,0.08,0.12,Proposed,Share of active members paying
+upgrade_price,PHP/member/month,79,99,149,Proposed,Optional consumer subscription
+matching_fee,PHP/new_activation,200,500,800,Needs validation,One-time supplier fee; hypothetical even when nonzero
+kwh_per_account,kWh/account/month,200,300,400,Proposed,Illustrative constant consumption
+baseline_rate,PHP/kWh,10,10,10,Proposed,Comparable all-in effective baseline rate
+offer_rate,PHP/kWh,10.2,9.4,9,Proposed,Comparable all-in effective offer rate
+savings_fee_rate,fraction,0,0,0,Needs validation; disabled,Consumer-paid share of positive gross savings
+community_allocation_rate,fraction,0,0,0,Needs validation; disabled,Opt-in share after savings fee; not revenue
+dashboard_paying_share,fraction,0,0,0,Needs validation; disabled,Fraction of communities paying dashboard fee
+dashboard_fee,PHP/community/month,0,0,0,Needs validation; disabled,Dashboard or white-label recurring fee
+referral_conversion,fraction/month,0,0,0,Needs validation; disabled,Ancillary conversions per active member each month
+referral_fee,PHP/conversion,0,0,0,Needs validation; disabled,Ancillary fee excludes energy matching
+sponsorship,PHP/community/month,0,0,0,Needs validation; disabled,Disclosed sponsorship revenue
+variable_cost,PHP/active_member/month,30,20,15,Proposed,Incremental support hosting and AI allowance
+payment_cost_rate,fraction,0.03,0.03,0.03,Proposed,Applies to recurring revenue; simplified
+fixed_opex,PHP/month,65000,50000,45000,Proposed,Operating labor and overhead after build
+build_cost,PHP,700000,550000,400000,Preserved envelope; case choices proposed,Downside uses high cost and upside low cost
+feasibility_cost,PHP,0,0,0,Unbudgeted placeholder,Estimate separately; zero does not mean free
+other_launch_cost,PHP,0,0,0,Unbudgeted placeholder,Legal registration acquisition deposits etc; estimate separately

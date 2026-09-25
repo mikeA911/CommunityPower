@@ -1,0 +1,4 @@
+scenario,initial_cost,year1_revenue,year1_variable_cost,year1_fixed_opex,year1_operating_result,year1_gross_savings,year1_net_member_benefit,month12_active_members,month12_activated_accounts,month12_paid_members,month12_recurring_revenue,month12_operating_result,month12_cash_proxy,funding_need_proxy,cumulative_break_even_month
+downside,700000.0,815.63,6542.48,780000.0,-785726.85,-435.13,-950.77,22.18,1.11,0.67,52.58,-65614.54,-1485726.85,1485726.85,
+base,550000.0,33791.92,35241.85,600000.0,-601449.93,62690.57,48898.64,168.54,33.71,13.48,1334.86,-52076.04,-1151449.93,1151449.93,
+upside,400000.0,324430.32,97971.71,540000.0,-313541.38,1059399.0,946648.68,572.67,240.52,68.72,10239.29,-43657.9,-713541.38,713541.38,

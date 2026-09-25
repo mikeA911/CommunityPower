@@ -1,0 +1,7 @@
+category,low_php,base_php,high_php,status
+Discovery and design,40000,55000,70000,Proposed allocation
+Engineering,240000,330000,420000,Proposed allocation
+QA and security review,50000,70000,90000,Proposed allocation
+Pilot setup and training,30000,40000,50000,Proposed allocation
+Contingency,40000,55000,70000,Proposed allocation
+TOTAL,400000,550000,700000,Preserved envelope; base is midpoint
