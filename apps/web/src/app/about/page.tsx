@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Brand } from "@/components/brand";
+
+export const metadata = { title: "About" };
+export default function About() {
+  return <div className="public-shell"><header className="public-header"><Brand /><Link href="/" className="text-link"><ArrowLeft size={16} /> Back home</Link></header><main id="main" className="editorial-page"><span className="eyebrow blue">OUR PURPOSE</span><h1>More clarity.<br />More community.</h1><p className="lead">Community Power is a proposed supplier-neutral platform for Philippine communities to understand energy costs, share useful information and explore suitable offers.</p><div className="editorial-grid"><article><h2>People stay in control</h2><p>Joining a community does not establish electricity eligibility, sign a contract or guarantee savings. Your authority and sharing choices stay separate from membership.</p></article><article><h2>CP lends a hand</h2><p>Our planned AI assistant will explain bills and guide tasks. In this first preview, CP uses scripted answers and sample data. Core tasks will also be available through direct controls.</p></article><article><h2>A useful free foundation</h2><p>Basic bill overview, basic comparisons and the community board belong in the free tier. Optional upgrades are a separate choice.</p></article><article><h2>Supported by Sandz</h2><p>Sandz provides platform support and maintenance. Detailed organization information, contact channels and approved policies will be added before live onboarding.</p></article></div><Link className="button button-blue" href="/demo/consumer">Explore the first preview <ArrowRight size={18} /></Link></main></div>;
+}

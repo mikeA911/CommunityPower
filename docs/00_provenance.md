@@ -23,6 +23,8 @@ No text is represented as a verbatim recovery of the missing original documents.
 | S3 | [ERC announcement of Omnibus Rules](https://www.erc.gov.ph/Press-Singular/83808) | ERC announced rules covering consumer choice programs in August 2024 | Historical background; check subsequent amendments and applicability |
 | S4 | [ERC retail aggregation issuance](https://erc.gov.ph/Issuance-Detail/41748) | Records Resolution 04, Series of 2022 | Not proof that a proposed community qualifies today |
 | S5 | [Official AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md) | Root and nested instructions and project guidance | Product documentation may change |
+| S6 | User-supplied `CP-Logo.png`, 25 September 2026 | Community Power logo and CP assistant-button visual in the local UI preview | Asset origin/rights beyond user provision not independently verified; no supplier relationship implied |
+| S7 | User-supplied Supabase project `mzlzxcgoxkdquoitiojm`, 25 September 2026 | Selected pilot-community Auth/database project and implementation connection | Does not establish a Sandz control project, production readiness, legal approval or GitHub integration status |
 
 Sources S3–S5 accessed 24 September 2026. Candidate competitors have not been identity-matched or independently verified. Do not attach market-share, pricing, licensing, capability, or partnership claims to them without new evidence.
 

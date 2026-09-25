@@ -13,3 +13,11 @@ venv/
 /local-data/
 .DS_Store
 Thumbs.db
+node_modules/
+.next/
+*.tsbuildinfo
+playwright-report/
+test-results/
+.logs/
+*.log
+.vercel/

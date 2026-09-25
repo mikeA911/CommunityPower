@@ -1,0 +1,18 @@
+{
+  "name": "community-power",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.17.0",
+  "workspaces": ["apps/web"],
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "npm run dev --workspace @community-power/web",
+    "build": "npm run build --workspace @community-power/web",
+    "start": "npm run start --workspace @community-power/web",
+    "typecheck": "npm run typecheck --workspace @community-power/web",
+    "lint": "npm run lint --workspace @community-power/web",
+    "test": "npm run test --workspace @community-power/web",
+    "test:e2e": "npm run test:e2e --workspace @community-power/web",
+    "bootstrap:users": "node --env-file=apps/web/.env.local scripts/provision-pilot-users.mjs"
+  }
+}

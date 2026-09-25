@@ -10,6 +10,7 @@ Read README.md and codex/PROJECT_CONTEXT.md before substantive changes. Use docs
 - Keep participant benefits separate from platform revenue. Show negative savings. Apply one-time fees only to new activations and avoid double counting allocations.
 - Use synthetic data for development. Never commit personal bills, credentials or confidential contracts. Enforce community and role boundaries in any future application.
 - Record material decisions and their evidence in PROJECT_CONTEXT.md. Update requirements and model documentation when behavior changes.
+- Maintain `wiki/` as CP's platform-help source throughout development. Update affected articles and example questions in the same change as behavior, permissions, onboarding or support changes; otherwise explain no wiki impact. Follow `wiki/README.md`; keep planned/unreviewed content out of published CP answers and never store secrets or personal records in the wiki.
 - Follow the user’s authorized task scope. Drafting and analysis do not authorize contacting members/suppliers, signing agreements, deploying publicly, collecting money or switching electricity service.
 - Report what changed, verification performed, and material remaining uncertainty. Do not describe a plan or prototype as a production service.
 
