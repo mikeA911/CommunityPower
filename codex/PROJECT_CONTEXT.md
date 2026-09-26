@@ -1,5 +1,5 @@
 # Project context
-Last updated: 25 September 2026. Status: planning package plus public alpha prototype and connected pilot-community Supabase Auth foundation; feasibility not completed.
+Last updated: 26 September 2026. Status: planning package plus public alpha prototype, connected pilot-community Supabase Auth foundation and proposed Codex Cloud readiness package; feasibility not completed.
 
 ## Objective
 Validate and, if justified, build a supplier-neutral Philippine community energy coordination platform. The package covers concept, MVP, economics, benefits, competition, pilot decisions and future vision.
@@ -50,5 +50,6 @@ Pilot location and community type; actual account eligibility; legal role and bu
 | 2026-09-25 | Add landing-page login/sign-up modal and bootstrap three named pilot Auth identities; users establish passwords through recovery | Explicit user instruction; personal addresses stay in ignored local configuration and are not committed | Auth/recovery code and bootstrap command implemented locally as preview-0.2.0; projects and identities await local Supabase configuration; database roles/RLS remain pending |
 | 2026-09-25 | Connect Supabase project `mzlzxcgoxkdquoitiojm` as the pilot community project | Project link and community-admin Supabase identity supplied by user; project dashboard inspected after user login | Community URL/publishable key stored only in ignored local configuration; Auth URL and callback configured; community migration applied; community-admin and consumer identities/roles created; control project pending |
 | 2026-09-25 | Publish the reviewed alpha prototype through Vercel at `community-power-theta.vercel.app` | User requested a colleague-ready alpha and supplied Vercel project `prj_38klhZgXunLbHYOl5vojVXsSl8eH`; Vercel CLI inspection, redeployment and public HTTP checks | Commit `96e0442` deployed with Node.js 24 and Next.js preset; stable alias public, generated deployment URLs protected; Supabase stable callback configured and recovery requests accepted, emailed-link completion pending |
+| 2026-09-26 | Prepare the repository for Codex Cloud use from an Android tablet | User requested a self-contained fresh-clone workflow independent of the desktop; official Codex Cloud environment and AGENTS.md guidance reviewed | Cloud setup/maintenance scripts, one-command checks, credentials boundary, branch/PR workflow and first-task prompt proposed on `codex/cloud-readiness`; GitHub connection and branch rules remain user/account administration |
 
 Add new entries with owner, evidence and status as decisions are made. User decisions take priority over this draft.

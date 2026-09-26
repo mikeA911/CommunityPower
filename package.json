@@ -13,6 +13,8 @@
     "lint": "npm run lint --workspace @community-power/web",
     "test": "npm run test --workspace @community-power/web",
     "test:e2e": "npm run test:e2e --workspace @community-power/web",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build && python scripts/check.py",
+    "check:full": "npm run check && npm run test:e2e",
     "bootstrap:users": "node --env-file=apps/web/.env.local scripts/provision-pilot-users.mjs"
   }
 }

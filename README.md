@@ -4,12 +4,16 @@ Planning package and local application preview · 25 September 2026 · v0.1
 Community Power is a proposed supplier-neutral platform helping Philippine communities understand energy costs, organize demand, compare suitable offers, and track benefits. This is a planning and feasibility package, not a launched service or an approved electricity aggregation arrangement.
 
 ## Start here
-Run the new synthetic UI locally with Node 24: `npm ci`, then `npm run dev`. Open `http://127.0.0.1:3000`. See [web implementation notes](apps/web/README.md) for commands, tests and integration boundaries. No credentials are needed; this is not a live service.
+From a fresh clone, use Node 24, npm 11 and Python 3.14. Run `npm ci`, then `npm run dev`, and open `http://127.0.0.1:3000`. Run `npm run check` for the standard repository verification. See [web implementation notes](apps/web/README.md) for integration boundaries and browser tests. No credentials are needed for public pages, synthetic demos, builds or standard checks; this is not a production service.
 
 1. Read [project context](codex/PROJECT_CONTEXT.md) and [source limitations](docs/00_provenance.md).
 2. Review the [concept paper](docs/01_concept_paper.md), [MVP specification](docs/02_mvp_specification.md), and [go/no-go brief](docs/04_go_no_go.md).
 3. Edit [model assumptions](model/assumptions.csv), then run `python model/calculate.py` from this folder. Python 3 and its standard library are sufficient. CSV outputs are snapshots; they do not recalculate inside a spreadsheet app.
 4. Use [Codex handoff instructions](docs/09_codex_handoff.md) to continue development.
+
+## Codex Cloud from a tablet
+
+The repository is prepared for a fresh Codex Cloud checkout without files from the desktop. Connect the GitHub repository, create its cloud environment, and use the setup values and copy-ready first task in [the Codex Cloud guide](docs/16_codex_cloud.md). Cloud work should use a `codex/*` branch and a pull request. Runtime keys and personal bills do not belong in the repository or a task prompt.
 
 ## Package map
 - `apps/web/`: runnable Next.js/React interface preview, domain checks and browser tests.
@@ -30,6 +34,7 @@ Run the new synthetic UI locally with Node 24: `npm ci`, then `npm run dev`. Ope
 - `docs/12_domain_ontology.md`: proposed actors, relationships, actions, permissions, and service-category extensions.
 - `docs/13_architecture.md`: Next.js/Supabase PWA, CP assistant, per-community databases, invitations, AI bill reading, tables and RLS.
 - `docs/14_product_backlog.md`: editable draft feature list, epics, user stories, acceptance criteria and build slices.
+- `docs/16_codex_cloud.md`: Android/tablet workflow, cloud environment setup, secrets boundary and first-task prompt.
 - `wiki/`: maintained CP platform-help source, article template, starter guides and review/publishing rules; initial content is draft.
 - `model/`: editable CSV inputs, reproducible calculator, generated forecast and scenario summary.
 - `codex/AGENTS.md` and `codex/PROJECT_CONTEXT.md`: operating guidance and durable context.
