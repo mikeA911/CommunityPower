@@ -15,3 +15,18 @@ Read README.md and codex/PROJECT_CONTEXT.md before substantive changes. Use docs
 - Report what changed, verification performed, and material remaining uncertainty. Do not describe a plan or prototype as a production service.
 
 For further project context explicitly read `codex/AGENTS.md` and `codex/PROJECT_CONTEXT.md`. Root guidance applies across this package.
+
+## Reproducible setup and verification
+
+- Use Node.js 24, npm 11 and Python 3.14. Install JavaScript dependencies from the repository root with `npm ci`.
+- Run `npm run check` before every pull request. It performs type checking, linting, domain tests, a production build and the Python model/snapshot checks.
+- Run `npm run check:full` when browser-visible behavior changes. Install Chromium first with `npm exec --workspace @community-power/web -- playwright install --with-deps chromium`.
+- Public pages and synthetic demos require no environment variables. Copy `apps/web/.env.example` only when testing an integration that needs local configuration.
+- Never place credentials in prompts, source files, test fixtures, logs, screenshots or commits. Use synthetic or redacted bills. Do not use service-role or AI keys for routine checks.
+
+## Cloud and pull-request workflow
+
+- In Codex Cloud, work on a `codex/<short-task>` branch and open a pull request. Do not push directly to `main`, merge a pull request, deploy, mutate a live Supabase project or send external messages unless the task explicitly authorizes that action.
+- Keep each task bounded. Review `git diff`, `git status --short` and the staged file list before committing. Confirm no `.env*`, real bills, email lists, access tokens or generated browser artifacts are included.
+- Treat Vercel production and the pilot Supabase project as live external systems. Prefer repository changes, migrations and synthetic tests; leave application of migrations and deployment as explicit reviewed steps.
+- Include the commands run, results, wiki impact and remaining limitations in the pull-request description. A documentation or tooling-only change may state that CP wiki content is unaffected.
