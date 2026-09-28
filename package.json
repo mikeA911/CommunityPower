@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "npm@11.17.0",
-  "workspaces": ["apps/web"],
-  "engines": { "node": ">=24 <25" },
+  "workspaces": [
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
     "dev": "npm run dev --workspace @community-power/web",
     "build": "npm run build --workspace @community-power/web",
     "start": "npm run start --workspace @community-power/web",
     "typecheck": "npm run typecheck --workspace @community-power/web",
     "lint": "npm run lint --workspace @community-power/web",
-    "test": "npm run test --workspace @community-power/web",
+    "test": "npm run test --workspace @community-power/web && npm run test:policies && npm run test:seed && npm run test:rag",
+    "test:rag": "node scripts/test-conversation-rag.mjs",
+    "test:policies": "node scripts/test-bill-policies.mjs",
+    "seed:beta": "node scripts/seed-beta.mjs",
+    "test:seed": "node --experimental-strip-types --test scripts/beta-seed.test.mjs",
     "test:e2e": "npm run test:e2e --workspace @community-power/web",
     "check": "npm run typecheck && npm run lint && npm test && npm run build && python scripts/check.py",
     "check:full": "npm run check && npm run test:e2e",
     "bootstrap:users": "node --env-file=apps/web/.env.local scripts/provision-pilot-users.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@electric-sql/pglite-pgvector": "0.0.9"
   }
 }

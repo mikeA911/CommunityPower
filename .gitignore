@@ -22,3 +22,4 @@ test-results/
 *.log
 .vercel/
 /vina.txt
+/.codex-remote-attachments/

@@ -1,4 +1,4 @@
-import { answerFromPreview, readPreviewGuide } from "@/lib/preview-help";
+import { answerFromPreview, navigationAnswer, readPreviewGuide, readPreviewNavigation } from "@/lib/preview-help";
 
 export async function POST(request: Request) {
   // This endpoint has no models, credentials, persistence or protected information.
@@ -17,5 +17,6 @@ export async function POST(request: Request) {
   catch { return Response.json({ error: "Invalid request" }, { status: 400 }); }
   if (!input || typeof input !== "object" || !("message" in input) || typeof input.message !== "string" || !input.message.trim() || input.message.length > 500) return Response.json({ error: "Use a message of 1–500 characters" }, { status: 400 });
   const guide = await readPreviewGuide();
-  return Response.json(answerFromPreview(input.message, guide.content), { headers: { "Cache-Control": "no-store" } });
+  const navigation = await readPreviewNavigation();
+  return Response.json({ ...(navigationAnswer(input.message, navigation) ?? answerFromPreview(input.message, guide.content)), version: guide.version }, { headers: { "Cache-Control": "no-store" } });
 }

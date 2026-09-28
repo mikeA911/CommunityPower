@@ -9,6 +9,37 @@ export async function readPreviewGuide() {
   return { content, version: Number(data.version) };
 }
 
+export type NavigationFeature = { id: string; label: string; href: string | null; state: string; instructions: string };
+export async function readPreviewNavigation(): Promise<NavigationFeature[]> {
+  const catalog = JSON.parse(await readFile(resolve(process.cwd(), "../../wiki/previews/navigation.json"), "utf8"));
+  if (catalog.release !== "preview-0.2.0" || catalog.status !== "draft-preview-only") throw new Error("Navigation catalog mismatch");
+  return catalog.features;
+}
+export function navigationAnswer(message: string, features: NavigationFeature[]) {
+  const all = /navigation|navigate|features|what can|where.*go|menu|find.*way/i.test(message);
+  let ids: string[] = [];
+  if (all) ids = features.map(f => f.id);
+  else if (/food|grocer|laundry|water delivery|maintenance|future service|service request|add.*service/i.test(message)) ids = ["future-services","service-manager"];
+  else if (/conversation|chat history|remember|recall|memory|\brag\b/i.test(message)) ids = ["private-memory"];
+  else if (/delete|deletion|export|withdraw|consent/i.test(message)) ids = ["privacy"];
+  else if (/ownership|authority|belong|landlord|tenant/i.test(message)) ids = ["authority","bills"];
+  else if (/history|dashboard|multiple|two houses|my bills/i.test(message)) ids = ["bills"];
+  else if (/board|post|reply|moderation/i.test(message)) ids = ["board","support"];
+  else if (/about|website|home page/i.test(message)) ids = ["home","about"];
+  else if (/member|roster|invite|import|csv/i.test(message)) ids = ["members"];
+  else if (/paid|upgrade|subscription|checkout/i.test(message)) ids = ["upgrades"];
+  else if (/support|report|complaint/i.test(message)) ids = ["support"];
+  else if (/install|offline|pwa/i.test(message)) ids = ["pwa"];
+  else if (/offer|referral|comparison/i.test(message)) ids = ["offers"];
+  if (!ids.length) return null;
+  const selected = features.filter(f => ids.includes(f.id));
+  return {
+    text: selected.map(f => `${f.label} (${f.state}): ${f.instructions}`).join("\n\n"),
+    source: "/help/preview#feature-navigation",
+    links: selected.filter(f => f.href).map(f => ({ label: f.label, href: f.href! })),
+  };
+}
+
 export function headingId(text: string) { return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
 
 /** Explicit synthetic preview only; not the production wiki authorization engine. */

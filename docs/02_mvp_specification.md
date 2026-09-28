@@ -64,3 +64,19 @@ Test role/community isolation, withdrawn consent, bad uploads, duplicate bills, 
 Definition of done: each requirement has a demonstrated acceptance result; no unresolved critical access-control or data-loss defects; support and moderation owners assigned; pilot users have usable instructions; eligibility and commercial gates are recorded separately from software readiness. A successful demonstration does not authorize supplier contracting.
 
 Each implemented workflow also needs reviewed, release-compatible `wiki/` help and representative CP questions. Planned starter guides are not evidence of completed behavior. Publication and retrieval follow `docs/13_architecture.md` and `wiki/README.md`.
+
+## M21 · Consumer bill history implementation slice (26 September 2026)
+
+Use OpenAI for first bill extraction. Support multiple bills per consumer and separate service accounts/houses. Preserve originals and extraction independently of corrected, consumer-confirmed fields. Require authenticated active consumer access and private owner-scoped Storage/database rules. Match declared name/account/address to original extraction but never equate consistency or possession with ownership. Store all initial records as unverified authority; independent verification is an unresolved release requirement for any account-authority-dependent action. Missing fields remain unknown, currency is explicit, and credits remain negative. Initial market language targets: English and Filipino (Tagalog). Local implementation is gated; migration, live isolation tests, model evaluation and release review are pending. See `apps/web/README.md` for exact limits and enablement steps.
+
+## CP feature navigation acceptance update · 27 September 2026
+
+M11/M20: CP must explain each implemented feature's actual location and availability, provide only existing route links, and state when a requested workflow is planned or gated. Feature navigation is not authorization. Maintain a release-specific wiki catalog and test its links/question coverage alongside UI changes. The current catalog is public draft preview material; production retrieval still requires reviewed release-compatible articles and audience/community filters. No private bills or personal data are inputs to scripted navigation help.
+
+## M22 · Private conversation history and optional recall
+
+Store conversations/messages under current user and community access, separately from wiki articles and structured bill/account truth. Vector recall is optional per conversation; indexing is globally disabled until provider/data-handling/worker budgets are approved. Deletion/withdrawal removes derived vectors and pending work; stale workers cannot restore them. No default admin access. Local history APIs/UI now support private saved scripted exchanges, rename, pagination, confirmed deletion and recall controls. Trusted assistant writes must be atomic with the user's question and deduplicated on retry; the browser cannot supply owner, assistant content or role. Follow-up SQL application, hosted API verification, deployment, worker, retrieval integration, retention policy and Sandz adaptation remain pending. See docs/19_private_conversation_rag.md.
+
+## M23 · Future service interest preview
+
+Provide a dashboard entry to future-service cards with brief descriptions and explicit unavailable status; demonstrate optional consumer notes and a manager request list/add-service modal. This slice is synthetic browser-only, never a real order, notification or provider commitment. Before production, require community-scoped request storage, authenticated consumer/manager boundaries, retention and communication decisions. Preserve energy-first MVP scope.

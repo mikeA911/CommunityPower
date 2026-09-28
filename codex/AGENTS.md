@@ -13,3 +13,7 @@ Read README.md and codex/PROJECT_CONTEXT.md before substantive changes. Use docs
 - Maintain `wiki/` as CP's platform-help source throughout development. Update affected articles and example questions in the same change as behavior, permissions, onboarding or support changes; otherwise explain no wiki impact. Follow `wiki/README.md`; keep planned/unreviewed content out of published CP answers and never store secrets or personal records in the wiki.
 - Follow the user’s authorized task scope. Drafting and analysis do not authorize contacting members/suppliers, signing agreements, deploying publicly, collecting money or switching electricity service.
 - Report what changed, verification performed, and material remaining uncertainty. Do not describe a plan or prototype as a production service.
+
+## Beta execution tracking
+
+Use `docs/17_beta_roadmap.md` as the current beta task/evidence tracker. Update task status, README/setup status, relevant planning/backlog notes and CP feature/navigation guidance with each implementation slice. The public scripted preview catalog is `wiki/previews/navigation.json`; never describe a planned or gated feature as released. Keep hosted verification and release approval distinct from local test results.

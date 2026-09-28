@@ -2,10 +2,10 @@
 
 Draft v0.1 · 25 September 2026 · For sponsor review and editing.
 
-The user accepted the [architecture](13_architecture.md) as the planning baseline and requested this backlog. Stories translate that design and [MVP requirements M01–M20](02_mvp_specification.md) into reviewable work. Priorities, story boundaries and sequence below are proposals. All stories are **Draft**, unassigned and unestimated; none is implemented or automatically approved for release. Explicit open architecture and feasibility decisions remain open.
+The user accepted the [architecture](13_architecture.md) as the planning baseline and requested this backlog. Stories translate that design and [MVP requirements M01–M21](02_mvp_specification.md) into reviewable work. Priorities, story boundaries and sequence below are proposals. Story acceptance remains unapproved and estimates/owners are unassigned. Some implementation slices exist; track their evidence and remaining work in [the beta roadmap](17_beta_roadmap.md). Code existence is not story completion or release approval. Explicit open architecture and feasibility decisions remain open.
 
 ## How to edit this draft
-Implementation began on 25 September 2026. `apps/web` delivers an initial synthetic preview covering parts of CP-0103, E02, CP-0501–CP-0503/CP-0505, and sample flows related to E04/E08/E10. Scripted preview help is connected to `wiki/previews/first-look.md`; production E09 is not complete. Stories are not marked Done: no live Auth, databases, invitations, RLS, AI or real-data workflows have been connected. See `apps/web/README.md` for the exact implemented boundary.
+Implementation began on 25 September 2026. `apps/web` delivers an initial synthetic preview covering parts of CP-0103, E02, CP-0501–CP-0503/CP-0505, and sample flows related to E04/E08/E10. Scripted preview help is connected to `wiki/previews/first-look.md`; production E09 is not complete. Stories are not marked Done: pilot community Auth/role tables are connected, and local gated bill ingestion/history and a storage migration exist. Live invitations, bill migration/provider validation, independent authority review and beta release acceptance remain pending. See `apps/web/README.md` for the exact implemented boundary.
 
 
 Refer to an ID when changing scope, for example: “Move E10 to the first demo,” “Split CP-0803,” or “Add a consumer story for …”. Keep existing IDs stable; mark removed stories Deferred or Dropped rather than reusing their IDs. Add new stories under the relevant epic.
@@ -286,3 +286,19 @@ Sponsor edits / notes:
 ```
 
 This draft creates no GitHub issues or project-board entries. Once reviewed, each story can be copied into a scoped issue while retaining its ID.
+
+## Active beta sequencing · 27 September 2026
+
+The user authorized starting the controlled-beta path. See [the beta tracker](17_beta_roadmap.md) for B01–B11, actual evidence and next dependencies. Start with executable isolation tests and CP navigation coverage, then hosted synthetic verification, authority/privacy, onboarding, persistent board, reviewed CP help and recovery. This does not remove MVP features or authorize commercial activation. Keep stable story IDs and update tracker/wiki with each slice.
+
+## CP-0506 / B12 — Private conversation history and recall
+
+Latest hosted update: saved-turn follow-up SQL applied by user; 69 hosted synthetic assertions passed, including atomic save/rollback, retry deduplication and role/owner restrictions. Cleanup verified. Application API/browser acceptance, deployment and worker remain pending; this supersedes the SQL-pending status in the implementation log below.
+
+27 September implementation update: local conversation APIs and `/conversations` history/control UI are built, with owner-scoped reads, atomic trusted question/reply saves, safe retries, rename, paginated reopen, confirmed delete and optional recall. Follow-up SQL, hosted API acceptance and deployment are pending. Embedding worker/search and Sandz support remain out of this slice; draft wiki navigation now documents the configured local behavior.
+
+Foundation status: user applied schema; 44 hosted synthetic consumer checks passed. Local UI/API implementation is described above; worker/release pending. Store user/community-scoped immutable messages and optional vectors separately from the wiki. Require current owner access, opt-in recall, immediate removal from retrieval on deletion/withdrawal, and worker retry fencing. Admins cannot browse others' chat by default. See docs/19_private_conversation_rag.md for actual migration/test scope and outstanding provider/retention/release work. Sandz control-project adaptation is a separate dependency.
+
+## Future-service showcase implementation · B13
+
+User requested example consumer service cards (including food delivery), request notes and manager request/add-service controls. Local public previews now implement this in /services and /services/manage, reached from dashboards. All services remain Future service; requests and added cards are same-tab synthetic examples. Live request persistence, manager permissions, consent, providers and fulfillment are separate future stories. No change to energy-first beta scope or build estimates.

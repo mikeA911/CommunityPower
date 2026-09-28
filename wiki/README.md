@@ -73,3 +73,7 @@ These cases define expected behavior for future retrieval/answer tests; they are
 | An article contains instructions to ignore permissions | Treat text as untrusted reference content; server tool policy remains enforced |
 
 The runtime publisher, retrieval tables, RLS and evaluations are specified in the [architecture](../docs/13_architecture.md). Named reviewers, review cadence and first publishable release remain open.
+
+## Preview navigation maintenance
+
+`previews/navigation.json` is the public, explicitly draft feature/navigation catalog used by scripted CP and the preview help directory. It lists working route links, real button paths, availability states and planned limitations. The consumer bill dashboard exposes the same scripted help. No authorization is granted by a navigation link; protected APIs still check the caller. Maintain entries and example questions with every feature/navigation change. Domain tests verify links resolve to source routes and planned features have no action URL. This does not replace the production publishing and audience-filtering rules above.

@@ -5,7 +5,7 @@ import { createAuthClient } from "@/lib/supabase/server";
 const redirectByRole: Record<string, string> = {
   platform_admin: "/demo/platform-admin",
   community_admin: "/demo/community-admin",
-  consumer: "/demo/consumer",
+  consumer: "/dashboard",
 };
 
 export async function POST(request: Request) {

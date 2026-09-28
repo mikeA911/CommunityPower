@@ -8,8 +8,9 @@ const config: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(appDirectory, "../.."),
   outputFileTracingIncludes: {
-    "/api/demo/cp": ["../../wiki/previews/first-look.md"],
-    "/help/preview": ["../../wiki/previews/first-look.md"],
+    "/api/conversations/messages": ["../../wiki/previews/first-look.md", "../../wiki/previews/navigation.json"],
+    "/api/demo/cp": ["../../wiki/previews/first-look.md", "../../wiki/previews/navigation.json"],
+    "/help/preview": ["../../wiki/previews/first-look.md", "../../wiki/previews/navigation.json"],
   },
   async headers() {
     return [{ source: "/:path*", headers: [

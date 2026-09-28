@@ -29,3 +29,17 @@ Later: solar, EV, parking, payments and broader community services, each with it
 
 ## Change control
 Record requested change, customer value, acceptance criterion, cost/time impact and owner. Preserve the message board and basic AI assistance; simplify their implementation before silently removing them. Re-estimate when regulatory requirements, integrations or handling of money change. Pilot learning and commercial contracting are separate workstreams from software delivery.
+
+## Active beta roadmap · 27 September 2026
+
+Use [the beta roadmap and task tracker](17_beta_roadmap.md) for current execution order and acceptance evidence. It distinguishes local implementation, local tests, hosted verification and release. It supersedes stale implementation-status text in earlier planning notes, without changing the original budget/build assumptions or feasibility gates. No remaining-duration estimate has been approved.
+
+Synthetic test data for B02/B03 is prepared in `scripts/seed-beta.mjs`; [the seed guide](18_beta_seed.md) specifies the nine-bill fixture, prerequisites and current unapplied status. This is additive seed work for the user-named pilot, not authorization for destructive access tests or production release.
+
+27 September seed milestone: user applied the bill migration; additive synthetic seed and administrative record/image verification succeeded. B02a is complete for seed consistency. B02 consumer-session and cross-project checks remain open; this is not beta release approval.
+
+27 September: two synthetic consumer logins configured privately and 71 same-project consumer-session access checks passed. B02 remains partial pending cross-project and broader role/session/browser acceptance; see the tracker and seed guide. No new web deployment.
+
+B12 now includes local saved-conversation APIs/UI, with history, rename, confirmed deletion and optional recall, using a disabled indexing queue and synthetic vector tests. Follow-up saved-turn SQL and hosted web acceptance remain pending. The embedding worker is next after persistence verification. This does not supersede privacy, reviewed wiki, isolation or release gates. See docs/19_private_conversation_rag.md and the beta tracker; original build estimates are unchanged.
+
+28 September B13: added a synthetic future-service showcase and request/add-service preview. No live service expansion, provider onboarding or notification workflow is included. Original indicative build assumptions remain unchanged; production scope requires separate review.

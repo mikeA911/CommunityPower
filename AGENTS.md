@@ -30,3 +30,7 @@ For further project context explicitly read `codex/AGENTS.md` and `codex/PROJECT
 - Keep each task bounded. Review `git diff`, `git status --short` and the staged file list before committing. Confirm no `.env*`, real bills, email lists, access tokens or generated browser artifacts are included.
 - Treat Vercel production and the pilot Supabase project as live external systems. Prefer repository changes, migrations and synthetic tests; leave application of migrations and deployment as explicit reviewed steps.
 - Include the commands run, results, wiki impact and remaining limitations in the pull-request description. A documentation or tooling-only change may state that CP wiki content is unaffected.
+
+## Beta execution tracking
+
+Use `docs/17_beta_roadmap.md` as the current beta task/evidence tracker. Update task status, README/setup status, relevant planning/backlog notes and CP feature/navigation guidance with each implementation slice. The public scripted preview catalog is `wiki/previews/navigation.json`; never describe a planned or gated feature as released. Keep hosted verification and release approval distinct from local test results.
