@@ -4,7 +4,8 @@ test("consumer service requests appear in the manager example and added cards re
   await page.route("**/api/bills", route => route.fulfill({ json: { bills: [] } }));
   await page.goto("/dashboard");
   await page.getByRole("link", { name: "Explore future services" }).click();
-  await expect(page.getByText("Future service", { exact: true })).toHaveCount(5);
+  await expect(page.getByText("Future service", { exact: true })).toHaveCount(6);
+  await expect(page.getByRole("heading", { name: "Solar-charged home battery" })).toBeVisible();
   await page.getByRole("button", { name: "Request food delivery" }).click();
   await page.getByRole("dialog").getByLabel("Note to community manager (optional)").fill("Example: Friday evening meals please.");
   await page.getByRole("button", { name: "Add example request" }).click();
@@ -18,7 +19,7 @@ test("consumer service requests appear in the manager example and added cards re
   await expect(page.getByRole("status")).toContainText("not available to order");
   await page.getByRole("link", { name: "Consumer services preview" }).click();
   await expect(page.getByRole("heading", { name: "Pet care example" })).toBeVisible();
-  await expect(page.getByText("Future service", { exact: true })).toHaveCount(6);
+  await expect(page.getByText("Future service", { exact: true })).toHaveCount(7);
   await page.reload();
   await expect(page.getByRole("heading", { name: "Pet care example" })).toBeVisible();
   await page.getByRole("button", { name: "Reset examples" }).click();

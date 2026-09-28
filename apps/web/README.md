@@ -105,3 +105,9 @@ See `docs/19_private_conversation_rag.md`. Follow-up SQL application, hosted API
 ## Future service examples
 
 /services and /services/manage are deliberately public synthetic previews, linked from the consumer dashboard and community-admin demo. Browser session storage shares example requests and added cards across the two pages in the same tab; Reset examples clears edits. No credentials, SQL migration, API or provider integration is required. Do not treat the manager preview as authorization or collect real request notes there. Production request storage, manager RLS and notification consent are separate future work.
+
+## Tavily diagnostic
+
+/admin/integrations provides a protected POST /api/admin/tavily-check for active community administrators. Set server-only TAVILY_API_KEY in Vercel for the target deployment and redeploy. The check sends only the fixed public query Tavily Search API documentation, basic depth, one result, no generated answer/raw content/images. No key entry, provider body logging, bill/history reads or general search input. Same-origin requests and current community role/membership are required. A one-minute per-process cooldown reduces repeated clicks; it is not a distributed spending quota. No SQL migration. Conversational research is not connected.
+
+Official API reference reviewed 28 September 2026: https://docs.tavily.com/documentation/api-reference/endpoint/search. Live results require an authenticated admin to run the deployed check; mocked tests do not verify the Vercel key.

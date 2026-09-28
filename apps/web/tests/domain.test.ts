@@ -45,6 +45,33 @@ test("image sniffing refuses text disguised as a picture", () => {
 
 import { navigationAnswer, readPreviewNavigation } from "../src/lib/preview-help.ts";
 import { access } from "node:fs/promises";
+import { checkTavily } from "../src/lib/tavily-check.ts";
+test("Tavily diagnostic uses fixed public input and does not expose provider bodies", async () => {
+  let calls = 0;
+  const mock: typeof fetch = async (url, init) => {
+    calls++;
+    assert.equal(url, "https://api.tavily.com/search");
+    const body = JSON.parse(init!.body as string);
+    assert.equal(body.query, "Tavily Search API documentation");
+    assert.equal(body.max_results, 1);
+    assert.equal(body.include_raw_content, false);
+    assert.equal(body.include_answer, false);
+    return Response.json({ results: [{ content: "UNTRUSTED_PROVIDER_TEXT" }] });
+  };
+  assert.equal((await checkTavily(undefined, mock)).ok, false);
+  assert.equal(calls, 0);
+  const result = await checkTavily("synthetic-key", mock);
+  assert.equal(result.ok, true);
+  assert.equal(result.resultCount, 1);
+  assert.ok(!JSON.stringify(result).includes("UNTRUSTED_PROVIDER_TEXT"));
+  for (const status of [401, 403, 429, 432, 433, 500]) {
+    const failed = await checkTavily("synthetic-key", async () => new Response("SENSITIVE_ERROR", { status }));
+    assert.equal(failed.ok, false);
+    assert.ok(!JSON.stringify(failed).includes("SENSITIVE_ERROR"));
+  }
+  assert.equal((await checkTavily("synthetic-key", async () => { throw new Error("secret"); })).ok, false);
+  assert.equal((await checkTavily("synthetic-key", async () => Response.json({ unexpected: true }))).ok, false);
+});
 import { resolve } from "node:path";
 test("CP navigation catalog covers actual routes and keeps planned actions unavailable", async () => {
   const features = await readPreviewNavigation();

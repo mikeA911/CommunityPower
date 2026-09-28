@@ -1,7 +1,7 @@
 ---
 id: consumer-guide
 title: Consumer onboarding and bills
-version: 6
+version: 7
 status: draft
 audience: [consumer]
 scope: global
@@ -65,3 +65,5 @@ The configured local beta adds /conversations for active community accounts, lin
 Select **Explore future services** on the consumer dashboard to open /services. Cards describe possible food/grocery/water delivery, home maintenance and laundry pickup. Every card is labeled Future service. Request a card, optionally enter a made-up note, then **Add example request**. The request appears in the same-tab manager example only; no one is contacted. Changes persist in that browser tab until it closes or Reset examples is used. These are public previews, not available services or private live requests.
 
 Example: “Can I order food?” — No ordering is available; you can try the example interest-request flow. “Was my manager notified?” — No; this is a browser-only example.
+
+The future-service catalog now also offers a **Solar-charged home battery** example for Powerwall-style solar storage purchase interest. Use its Request button and optional made-up note. Compatibility, sizing, installation and costs require assessment; no supplier, price or savings are confirmed. This does not place an order.

@@ -73,3 +73,9 @@ See [the private-history/RAG guide](docs/19_private_conversation_rag.md). The us
 ## Future-services showcase
 
 Local /services and /services/manage pages demonstrate future service cards, consumer notes and a manager Add service modal. Dashboard links and CP preview guidance are included. This is public synthetic UI only: same-tab session storage, no Supabase migration, live requests, provider connection, notifications or orders. Reset examples restores the fixtures. See B13 in docs/17_beta_roadmap.md; deployment is pending.
+
+## Tavily connection check
+
+/admin/integrations adds an administrator-only server-side connectivity check using the existing Vercel TAVILY_API_KEY. No secrets are entered in the browser; a fixed public query consumes one basic search request. This does not enable CP internet research. See apps/web/README.md and B14 in the beta tracker. Deployment/live provider verification is pending.
+
+The future-services catalog now has six built-in cards, including solar-charged home battery purchase interest. All remain synthetic future-service examples.

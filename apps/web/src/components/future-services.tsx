@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Bike, ShoppingBasket, Droplets, Wrench, Shirt, Sparkles, X } from "lucide-react";
+import { Bike, ShoppingBasket, Droplets, Wrench, Shirt, BatteryCharging, Sparkles, X } from "lucide-react";
 
 type Service = { id: string; name: string; description: string };
 type Interest = { id: string; service: string; note: string; member: string };
@@ -11,6 +11,7 @@ const initialServices: Service[] = [
   { id: "water", name: "Water delivery", description: "Explore scheduled drinking-water deliveries and refill collection for your community." },
   { id: "repairs", name: "Home maintenance", description: "Explore a convenient way to request help with routine household repairs and maintenance." },
   { id: "laundry", name: "Laundry pickup", description: "Explore coordinated laundry pickup and return times for community households." },
+  { id: "solar-battery", name: "Solar-charged home battery", description: "Explore buying a Powerwall-style home battery to store solar energy. Solar compatibility, sizing, installation and costs would need assessment. No supplier or savings are confirmed." },
 ];
 const initialRequests: Interest[] = [
   { id: "sample-food", service: "Food delivery", member: "Sample household A", note: "Example: an evening delivery window would be useful." },
@@ -43,7 +44,7 @@ export function FutureServices({ manager = false }: { manager?: boolean }) {
         const parsed = JSON.parse(raw);
         const validServices = Array.isArray(parsed.services) && parsed.services.length <= 30 && parsed.services.every((s: Service) => typeof s.id === "string" && typeof s.name === "string" && s.name.length <= 60 && typeof s.description === "string" && s.description.length <= 300);
         const validRequests = Array.isArray(parsed.requests) && parsed.requests.length <= 100 && parsed.requests.every((r: Interest) => typeof r.id === "string" && typeof r.service === "string" && typeof r.note === "string" && r.note.length <= 500 && typeof r.member === "string");
-        if (validServices && validRequests) { setServices(parsed.services); setRequests(parsed.requests); }
+        if (validServices && validRequests) { setServices([...initialServices, ...parsed.services.filter((s: Service) => !initialServices.some(initial => initial.id === s.id))]); setRequests(parsed.requests); }
       }
     } catch { /* Invalid/unavailable storage falls back to synthetic examples. */ }
       setReady(true);
@@ -65,7 +66,7 @@ export function FutureServices({ manager = false }: { manager?: boolean }) {
     if (services.some(s => s.name.toLowerCase() === name.trim().toLowerCase())) { setNotice("A service with that name is already in this preview."); return; }
     if (save([...services, { id: crypto.randomUUID(), name: name.trim(), description: description.trim() }], requests)) { setAdding(false); setName(""); setDescription(""); setNotice("Example service added to the catalog as a future service. It is not available to order."); }
   }
-  const icons = [Bike, ShoppingBasket, Droplets, Wrench, Shirt];
+  const icons = [Bike, ShoppingBasket, Droplets, Wrench, Shirt, BatteryCharging];
   return <main className="bills-page services-page">
     <nav aria-label="Services navigation"><Link className="text-link" href={manager ? "/demo/community-admin" : "/dashboard"}>{manager ? "Community manager dashboard" : "Consumer dashboard"}</Link><Link className="text-link" href={manager ? "/services" : "/services/manage"}>{manager ? "Consumer services preview" : "View manager example"}</Link></nav>
     <span className="eyebrow blue">COMMUNITY POSSIBILITIES</span><h1>{manager ? "Shape your community’s services." : "More possibilities, closer to home."}</h1>

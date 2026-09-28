@@ -1,7 +1,7 @@
 ---
 id: community-admin-guide
 title: Community administration
-version: 2
+version: 3
 status: draft
 audience: [community_admin]
 scope: global
@@ -37,3 +37,7 @@ Answer points: consumer imports cannot grant elevated roles; use the Sandz-autho
 The community-admin demo dashboard links **Service requests · example** to /services/manage. Read sample household requests and notes, plus example consumer requests made in the same browser tab. **Add service example** opens a modal for the service name and brief description. **Add future service** adds a card to the consumer preview, always marked Future service. This does not activate a service, partner a provider, contact anyone or grant management access. Use made-up notes only. Reset examples restores the fixtures; closing the tab clears its session storage.
 
 Example: “How do I add food delivery?” — Show the example modal; explain that provider onboarding, fulfillment and live requests are not connected. “Can another manager see my example?” — No shared backend exists; the example is confined to the tab.
+
+## Tavily connection diagnostic
+
+Open Integration checks from the community-admin demo dashboard or /admin/integrations. An active community-admin login is required to run Test Tavily connection; public demo roles confer no permissions. The server uses TAVILY_API_KEY, sends a fixed public documentation query and shows a sanitized result. No personal data is sent, and no key is entered in the browser. This consumes search allowance and does not enable CP research. Example: “Why is access denied?” — Sign in with an active community-admin account; do not grant roles through the demo.

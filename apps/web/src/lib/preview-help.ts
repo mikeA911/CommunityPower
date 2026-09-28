@@ -19,7 +19,8 @@ export function navigationAnswer(message: string, features: NavigationFeature[])
   const all = /navigation|navigate|features|what can|where.*go|menu|find.*way/i.test(message);
   let ids: string[] = [];
   if (all) ids = features.map(f => f.id);
-  else if (/food|grocer|laundry|water delivery|maintenance|future service|service request|add.*service/i.test(message)) ids = ["future-services","service-manager"];
+  else if (/tavily|internet research|web research|search.*web|integration check/i.test(message)) ids = ["web-research"];
+  else if (/food|grocer|laundry|water delivery|maintenance|future service|service request|add.*service|power\s?wall|solar|battery/i.test(message)) ids = ["future-services","service-manager"];
   else if (/conversation|chat history|remember|recall|memory|\brag\b/i.test(message)) ids = ["private-memory"];
   else if (/delete|deletion|export|withdraw|consent/i.test(message)) ids = ["privacy"];
   else if (/ownership|authority|belong|landlord|tenant/i.test(message)) ids = ["authority","bills"];

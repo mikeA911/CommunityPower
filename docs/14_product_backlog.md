@@ -302,3 +302,7 @@ Foundation status: user applied schema; 44 hosted synthetic consumer checks pass
 ## Future-service showcase implementation · B13
 
 User requested example consumer service cards (including food delivery), request notes and manager request/add-service controls. Local public previews now implement this in /services and /services/manage, reached from dashboards. All services remain Future service; requests and added cards are same-tab synthetic examples. Live request persistence, manager permissions, consent, providers and fulfillment are separate future stories. No change to energy-first beta scope or build estimates.
+
+B14: administrator-only Tavily diagnostic prepared at /admin/integrations using server-side TAVILY_API_KEY, fixed public input and no private content. Local validation, deployment and live test results must be distinguished. This does not connect conversational internet research or alter build estimates.
+
+B13 addition: sixth future-service example for buying a solar-charged home battery. Same synthetic request flow; solar compatibility, sizing, installation and costs remain unassessed. No supplier relationship or savings claim.

@@ -1,7 +1,7 @@
 ---
 id: first-look
 title: Community Power first-look guide
-version: 6
+version: 8
 status: draft
 audience: [public, consumer, community_admin, platform_admin]
 scope: global
@@ -96,3 +96,11 @@ Consumers: select **Explore future services** on /dashboard or the consumer demo
 Managers: select **Service requests · example** on the community-admin demo, or open /services/manage. It shows sample requests and those added in the consumer preview in the same tab. **Add service example** opens a modal for a name and description; **Add future service** adds a preview card. It does not activate a service. Changes use browser session storage, survive navigation/reload in that tab, and disappear when the tab closes or **Reset examples** is used. These are public synthetic pages with no live role privileges or database integration.
 
 Example questions: “Can I request food delivery?” — Explain the preview request and no delivery/order or message being sent. “Where does the manager see requests?” — Link to /services/manage, explain same-tab examples. “Does adding a service launch it?” — No, the card remains Future service. Use made-up comments and no personal data.
+
+## Tavily connectivity · local diagnostic
+
+Community administrators can open **Integration checks** from their demo dashboard, then **Test Tavily connection**. Sign in to My community with an active administrator account first; the demo role selector grants no access. /admin/integrations sends one fixed public documentation query using server configuration. It consumes search allowance, returns a connection status, and never sends bills or chats. There is no key input field. Consumers and anonymous visitors cannot run it. CP web research is not connected yet.
+
+Example: “Can CP search the internet?” — Not yet; the administrator connection check only tests Tavily access. “Where do I test Tavily?” — /admin/integrations after community-admin sign-in. No live success is claimed until that check passes in the deployed environment.
+
+The catalog also includes **Solar-charged home battery**: explore buying a Powerwall-style battery to store solar energy. Compatibility, sizing, installation and costs need assessment; no supplier or savings are confirmed. Example: “Can I buy a Powerwall?” — Open the future-service card and try the example request; no order or purchase is placed.
